@@ -1,7 +1,7 @@
 def is_anagram(first_string, second_string):
     if not first_string and not second_string:
         return ('', '', False)
-    
+
     first_string = first_string.lower()
     second_string = second_string.lower()
 
@@ -13,6 +13,7 @@ def is_anagram(first_string, second_string):
     else:
         return (first_string, second_string, False)
 
+
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
@@ -23,20 +24,20 @@ def merge_sort(arr):
 
     return merge(left, right)
 
+
 def merge(left, right):
     result = []
-    l, r = 0, 0
+    left_i, right_i = 0, 0
 
-    while l < len(left) and r < len(right):
-        if left[l] < right[r]:
-            result.append(left[l])
-            l += 1
+    while left_i < len(left) and right_i < len(right):
+        if left[left_i] < right[right_i]:
+            result.append(left[left_i])
+            left_i += 1
         else:
-            result.append(right[r])
-            r += 1
+            result.append(right[right_i])
+            right_i += 1
 
-    result.extend(left[l:])
-    result.extend(right[r:])
+    result.extend(left[left_i:])
+    result.extend(right[right_i:])
 
     return result
-
